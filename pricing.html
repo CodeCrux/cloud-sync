@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Pricing | Datacol
 ---
 
 <div class="pricing-header">
@@ -30,7 +31,7 @@ layout: default
           </ul>
         </div>
         <div class="plan-footer">
-          <a href="{{site.baseurl}}/contact?plan=individual" class="btn btn-big bg-green">Select plan</a>
+          <a data-plan="individual" href="{{site.baseurl}}/contact?plan=individual" class="btn btn-big bg-green">Select plan</a>
         </div>
       </div>
     </div>
@@ -51,7 +52,7 @@ layout: default
           </ul>
         </div>
         <div class="plan-footer">
-          <a href="{{site.baseurl}}/contact?plan=individual" class="btn btn-big bg-green">Select plan</a>
+          <a data-plan="startup" href="{{site.baseurl}}/contact?plan=startup" class="btn btn-big bg-green">Select plan</a>
         </div>
       </div>
     </div>
@@ -70,11 +71,11 @@ layout: default
             <li>Cloud, on-premise database connectivity with VPN </li>
             <li>Data Import/Export </li>
             <li>One to One On Call Support</li>
-            <li> Free trial for 2 months </li>
+            <li>Free trial for 2 months </li>
           </ul>
         </div>
         <div class="plan-footer">
-          <a href="{{site.baseurl}}/contact?plan=enterprise" class="btn btn-big bg-green">Select Plan</a>
+          <a data-plan="enterprise" href="{{site.baseurl}}/contact?plan=enterprise" class="btn btn-big bg-green">Select Plan</a>
         </div>
       </div>
     </div>
@@ -85,8 +86,8 @@ layout: default
 
 <div class="container">
   <div class='clearfix'>
-    <p> <i> *Note: </i> In case, we host database for you, your invoice will also include database provider charges after allowed number of rows.
-    <p> <i> *Note: </i> OData Connector setup as addon</p>
   </div>
   <br>
 </div>
+
+{% include login_modal.html %}

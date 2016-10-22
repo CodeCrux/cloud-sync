@@ -50,10 +50,62 @@
     }
   };
 
+  var getUrlVars = function(href){
+    var vars = {}, hash, q, domain;
+    domain = href.split('?')[0],
+    q = href.split('?')[1];
+    
+    if(q != undefined){
+      var hashes = q.split('&');
+      for(var i = 0; i < hashes.length; i++) {
+          hash = hashes[i].split('=');
+          vars[hash[0]] = hash[1];
+      }
+    }
+    return [domain, vars];
+  };
+
+
+  var appendQueryParam = function(element, key, value){
+    var href = element.attr('href'), parts = getUrlVars(href), domain = parts[0], params = parts[1], newhref, delimiter;
+
+    params[key] = value;
+    query = Object.keys(params).map(function(key){ return key + "=" + params[key] }).join('&');
+    newhref = domain + "?" + query;
+    element.prop('href', newhref);
+  };
+
+  var appendAnalyticsKey = function(){
+    if(window.analytics) {
+      analytics.ready(function(){
+        var mx_user_id = mixpanel.get_distinct_id();
+        $('.callback').find('a.btn').each(function(){
+          appendQueryParam($(this), 'mx_user_id', mx_user_id);
+        });
+      });
+    }
+  };
+
+  var initPlanPopup = function(){
+    var modal = $('#try-modal');
+
+    $('.plan-item a[data-plan]').on('click', function(ev){
+      ev.preventDefault();
+      var plan = $(ev.currentTarget).data('plan');
+      modal.find('.callback a.btn').each(function(){
+        var element = $(this);
+        appendQueryParam(element, 'plan', plan);
+      });
+      modal.modal('show');
+    });
+  };
+
   $(function() {
     contactForm('#contact');
     scrollNav();
     initTracking();
+    appendAnalyticsKey();
+    initPlanPopup();
   });
 
 })(jQuery);
