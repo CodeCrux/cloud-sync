@@ -10,11 +10,11 @@
         <p> To get start you need to connect {{site.title}} to your salesforce. We recommend you to first test out integration with sandbox environment. </p>
 
         {% if site.github.environment == 'dotcom' %}
-          {% assign sandbox_url = site.app_url + '/auth/salesforcesandbox/relay' %}
-          {% assign live_url = site.app_url + '/auth/salesforce/relay' %}
+          {% capture sandbox_url %}{{site.app_url}}/auth/salesforcesandbox/relay{% endcapture %}
+          {% capture live_url %}{{site.app_url}}/auth/salesforce/relay{% endcapture %}
         {% else %}
-          {% assign sandbox_url = 'http://localhost:3000/auth/salesforcesandbox/relay' %}
-          {% assign live_url = 'http://localhost:3000/auth/salesforce/relay' %}
+          {% capture sandbox_url %} http://localhost:3000/auth/salesforcesandbox/relay {% endcapture %}
+          {% capture live_url %}http://localhost:3000/auth/salesforce/relay{% endcapture %}
         {% endif %}
 
         <div class="text-center callback" style="margin: 30px 0;">
