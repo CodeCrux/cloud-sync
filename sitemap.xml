@@ -6,23 +6,23 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>http://datacol.io/</loc>
+    <loc>http://cloud-sync.com/</loc>
     <lastmod>2016-10-16T02:23:33+00:00</lastmod>
   </url>
   <url>
-    <loc>http://datacol.io/pricing</loc>
+    <loc>http://cloud-sync.com/pricing</loc>
     <lastmod>2016-10-16T02:23:33+00:00</lastmod>
   </url>
   <url>
-    <loc>http://datacol.io/contact</loc>
+    <loc>http://cloud-sync.com/contact</loc>
     <lastmod>2016-10-16T02:23:33+00:00</lastmod>
   </url>
   <url>
-    <loc>http://datacol.io/contact?plan=individual</loc>
+    <loc>http://cloud-sync.com/contact?plan=individual</loc>
     <lastmod>2016-10-16T02:23:33+00:00</lastmod>
   </url>
   <url>
-    <loc>http://datacol.io/contact?plan=enterprise</loc>
+    <loc>http://cloud-sync.com/contact?plan=enterprise</loc>
     <lastmod>2016-10-16T02:23:33+00:00</lastmod>
   </url>
 </urlset>

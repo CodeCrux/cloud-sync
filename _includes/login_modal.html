@@ -3,15 +3,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button class="close" type="button" data-dismiss="modal"> &times; </button>
-        <h4 class="modal-title"> Start using Datacol </h4>
+        <h4 class="modal-title"> Start using {{site.title}} </h4>
       </div>
 
       <div class="modal-body">
-        <p> To get start you need to connect Datacol to your salesforce. We recommend you to first test out integration with sandbox environment. </p>
+        <p> To get start you need to connect {{site.title}} to your salesforce. We recommend you to first test out integration with sandbox environment. </p>
 
         {% if site.github.environment == 'dotcom' %}
-          {% assign sandbox_url = 'https://app.datacol.io/auth/salesforcesandbox/relay' %}
-          {% assign live_url = 'https://app.datacol.io/auth/salesforce/relay' %}
+          {% assign sandbox_url = site.app_url + '/auth/salesforcesandbox/relay' %}
+          {% assign live_url = site.app_url + '/auth/salesforce/relay' %}
         {% else %}
           {% assign sandbox_url = 'http://localhost:3000/auth/salesforcesandbox/relay' %}
           {% assign live_url = 'http://localhost:3000/auth/salesforce/relay' %}
